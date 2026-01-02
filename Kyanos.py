@@ -13,7 +13,7 @@ from openai import OpenAI
 
 
 # ================== CONFIG ==================
-APP_DIR = os.path.join(os.path.expanduser("~"), ".aurorai")
+APP_DIR = os.path.join(os.path.expanduser("~"), ".Kyanos")
 os.makedirs(APP_DIR, exist_ok=True)
 CONFIG_FILE = os.path.join(APP_DIR, "config.json")
 
@@ -32,13 +32,13 @@ def save_api_key(key):
 class ApiKeyDialog(QDialog):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("AurorAI Setup")
+        self.setWindowTitle("Kyanos Setup")
         self.setFixedSize(420, 200)
 
         layout = QVBoxLayout(self)
         layout.setSpacing(14)
 
-        title = QLabel("AurorAI")
+        title = QLabel("Kyanos")
         title.setFont(QFont("Segoe UI", 18, QFont.Weight.Bold))
 
         subtitle = QLabel("Enter your OpenAI API key")
@@ -104,7 +104,7 @@ class ChatView(QWidget):
         self.chat.setPlaceholderText("Conversation will appear here…")
 
         self.input = QLineEdit()
-        self.input.setPlaceholderText("Message AurorAI…")
+        self.input.setPlaceholderText("Message Kyanos…")
         self.input.returnPressed.connect(self.send)
 
         layout.addWidget(self.chat)
@@ -113,7 +113,7 @@ class ChatView(QWidget):
         # Intro message (shown ONCE)
         self.add_message(
             "ai",
-            "👋 Hi, I’m AurorAI — a calm, clear study assistant.\n\n"
+            "👋 Hi, I’m Kyanos — a calm, clear study assistant.\n\n"
             "Ask questions, generate notes, quizzes, or flashcards anytime ✨"
         )
 
@@ -124,7 +124,7 @@ class ChatView(QWidget):
             bg = "#0f172a"
             padding = "10px"
         else:
-            label = "AurorAI"
+            label = "Kyanos"
             label_color = "#e8e115"
             bg = "#111827"
             padding = "12px"
@@ -161,7 +161,7 @@ class ChatView(QWidget):
 
         self.worker = AIWorker(
             self.client,
-            "You are AurorAI, a calm, clear, helpful study assistant.",
+            "You are Kyanos, a calm, clear, helpful study assistant.",
             text
         )
         self.worker.done.connect(lambda msg: self.add_message("ai", msg))
@@ -222,7 +222,7 @@ class ContentView(QWidget):
 class MainWindow(QMainWindow):
     def __init__(self, client):
         super().__init__()
-        self.setWindowTitle("AurorAI")
+        self.setWindowTitle("Kyanos")
         self.resize(1100, 720)
 
         root = QWidget()
@@ -235,7 +235,7 @@ class MainWindow(QMainWindow):
         sidebar_widget.setLayout(sidebar)
         sidebar_widget.setFixedWidth(220)
 
-        title = QLabel("AurorAI")
+        title = QLabel("Kyanos")
         title.setFont(QFont("Segoe UI", 16, QFont.Weight.Bold))
 
         btn_chat = QPushButton("Chat")
