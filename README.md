@@ -1,7 +1,7 @@
 # Kyanos
 Kyanos Your AI-powered study companion with a calming aurora-inspired interface.  Kyanos helps students learn smarter with effective flashcards and note making, interactive quizzes, and personalized AI chat box. Built for focused, engaging, and adaptive study sessions.
 
-AurorAI is a Python-based desktop AI chatbot built using **PyQt6** for the user interface and an **AI API** for intelligent responses.  
+Kyanos is a Python-based desktop AI chatbot built using **PyQt6** for the user interface and an **AI API** for intelligent responses.  
 It focuses on delivering **clear, structured, and meaningful answers**, including technical explanations and study notes.
 
 This project demonstrates **AI integration, desktop UI development, and prompt-driven response quality**.
